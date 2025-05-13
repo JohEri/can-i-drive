@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { AlertTriangle, Check } from "lucide-react";
 import Link from "next/link";
+import { countryLimits } from "@/lib/country_bac_limits";
 
 export default function Results({ results }: any) {
   const [showAnimation, setShowAnimation] = useState(true);
@@ -107,7 +108,7 @@ export default function Results({ results }: any) {
 
       <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-700">
         <h3 className="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200">
-          Countries Where You Can Legally Drive
+          Countries Where You Can Legally Drive a Car
         </h3>
 
         {showAnimation ? (
@@ -128,9 +129,15 @@ export default function Results({ results }: any) {
                         <Check className="mr-2 h-5 w-5 text-green-500" />
                         <span>{country.country}</span>
                       </div>
-                      <span className="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800 dark:bg-green-900/50 dark:text-green-300">
-                        {country.limit.toFixed(2)}%
-                      </span>
+                      {country.limit === 100 ? (
+                        <span className="rounded-md bg-gray-100 px-2 py-1 ml-2 text-xs font-bold text-gray-800">
+                          No limit!
+                        </span>
+                      ) : (
+                        <span className="rounded-full bg-green-100 px-2 py-1 ml-2 text-xs font-medium text-green-800 dark:bg-green-900/50 dark:text-green-300">
+                          {country.limit.toFixed(2)}%
+                        </span>
+                      )}
                     </div>
                   </Card>
                 ))}

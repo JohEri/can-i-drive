@@ -142,7 +142,8 @@ export default function Calculator() {
   }, [step]);
 
   const getCountriesForBAC = (bac: number) => {
-    return countryLimits.filter((c) => c.limit >= bac);
+    const res = countryLimits.filter((c) => c.limit >= bac);
+    return res.sort((a, b) => b.limit - a.limit);
   };
 
   const renderStep = () => {
