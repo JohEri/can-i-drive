@@ -1,6 +1,6 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,7 +8,13 @@ export default function Home() {
       <div className="container mx-auto px-4 py-16">
         <div className="flex flex-col items-center justify-center text-center">
           <div className="relative h-40 w-40 animate-bounce">
-            <Image src="/wine-mascot.png" alt="Wine Glass Mascot" width={200} height={200} className="drop-shadow-lg" />
+            <Image
+              src="/wine-mascot.png"
+              alt="Wine Glass Mascot"
+              width={200}
+              height={200}
+              className="drop-shadow-lg"
+            />
           </div>
 
           <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-red-800 dark:text-red-400 md:text-6xl">
@@ -16,7 +22,8 @@ export default function Home() {
           </h1>
 
           <p className="mt-4 max-w-2xl text-xl text-gray-700 dark:text-gray-300">
-            Find out your blood alcohol content and discover which countries you can legally drive in!
+            Find out your blood alcohol content and discover which countries you
+            can legally drive in!
           </p>
 
           <div className="mt-10">
@@ -32,13 +39,14 @@ export default function Home() {
 
           <div className="mt-8 max-w-2xl rounded-lg bg-white/80 p-4 text-gray-700 shadow-md dark:bg-gray-800/80 dark:text-gray-300">
             <p className="text-sm">
-              <strong>Disclaimer:</strong> This app is for entertainment purposes only. Never drink and drive. Always
-              follow local laws and regulations. The calculations provided are estimates and should not be used to
-              determine if you are fit to drive.
+              <strong>Disclaimer:</strong> This app is for entertainment
+              purposes only. Never drink and drive. Always follow local laws and
+              regulations. The calculations provided are estimates and should
+              not be used to determine if you are fit to drive.
             </p>
           </div>
         </div>
       </div>
     </main>
-  )
+  );
 }

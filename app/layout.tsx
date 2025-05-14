@@ -3,9 +3,12 @@ import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata = {
-  title: "Can I Drive There? - BAC Calculator",
+  title: "Can I Drive? - BAC Calculator",
   description:
     "Find out your blood alcohol content and discover which countries you can legally drive in!",
+  icons: {
+    icon: "/wine-mascot.png",
+  },
 };
 
 export default function RootLayout({
